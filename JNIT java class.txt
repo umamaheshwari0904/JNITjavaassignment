@@ -1,0 +1,2423 @@
+method overriding
+------------------------------------
+methodname same with same type of parameters or order of parameters or number of parameters
+
+Rules of overrriding
+
+-------------------------------
+1.separate classes are required for overriding
+2.inhereritence relationship is mandatory\
+3.separate objects for overriding
+4.class casting
+5.upcasting
+6.downcasting
+
+* abstract methos mus have absatract class
+
+*abstract class methods donothave body
+
+*for abstract class, we cant create obj abut can create reference
+
+Abstract class
+->colection of abstract mehods and concrete methods
+->abstract method: a mthod which doesnt have  any implementation or body
+->concrete method : a method which have implementation or body
+-> abstract methods can be written in abstarct class itself 
+->  for abstact class we cant create the objects but we can create the reference
+-> if a class extends the abstract classthen it should overide all the abstract methods
+->abstract methods must be overiden in the child class
+-> abstract method cant be declared as static, else complier will give error
+error : illegal combination of modifiers : abstract and static
+
+ -> abstract methods are those which have different implementation ex : lifespan()
+-> concrete methods are common implelementation : ex breathe()
+*abstract methods needed to be overrided
+*abstract cannot be declared as static compiler will give error
+*if any abstract class is extended , the sub class must have implemetation for the super class methods
+
+Strings
+====================
+->a group of characters is known as string
+
+types of string
+----------------------
+1.String // values declared inside are immutable
+2.StringBuffer //mutable..... synchronized
+3.StringBuilder //mutable... unsynchronized
+
+how to give input:
+=============================
+1)literals // String name="priya"  .....direct assigning of values
+2)new keyword //String name=new String("hello");
+
+
+->memory for string will stored in heap area
+
+Heap area is divided into two parts : 
+1)String non constant pool -   
+2)String constant pool area-  literals
+
+->once u declared a string, if creates a memory in constant pool area, again diff variable with same value , it will gain point out to same memory as the value is same,
+String s="hello";
+String s1="hello";
+
+->String s2  =new String("hello");/// it will be stored in non constant pool area
+
+comparedTo  gives diference ascii values
+
+
+-  toUpperCase
+-  toLowerCase
+-   trim() ...x.trim()+"java world" 
+-equals i case sentive
+-equalsignorecase : ignores the caps or small
+-charAt(int)
+compareTo - compares characters
+-substring(int)
+-substring(int,int)
+-contains(string) - returns true or false
+-indexOf(int)   // returns the index f substring
+-indexOf(int,int)
+-indexOf(String)
+-replace(string,string)
+
+StringBuffer : indicates to syncronized data
+-append
+
+StringBuffer sb=new StringBuffer("hello");
+sb.append("world");
+sop(sb);
+
+StringBuilder sb=new StringBuffer("hello");
+sb.append("world");
+sop(sb);
+assignment for abstract and concrete class
+abstract overloading
+string 
+
+
+=================================================
+constructor:
+------------------------------
+constructor takes part in object creation and initialise the variables
+
+object creation:-
+classname obj=new constructor();
+
+Properties of constructor::
+--------------------------------
+1)Its name should be same as classname
+2)constructor can't have return type i.e not even void
+3)constructor gets executed automically when the object is created
+
+
+Constructors are classified into two types
+1)Zero Parameterized constructor
+2)parameterized constructor
+
+
+ex:
+class Student{
+int id;
+float per;
+Student(){
+per=76.3f;
+id=1023;
+}
+void show(){
+System.out.println("id="+id);
+System.out.println("per="+id);
+}
+class ZeroConstructor{
+psvm(String args[])
+{
+Student s=new Student();
+s.show();
+Student s1=new Student();
+s1.show();
+}
+}
+
+==================================
+class Student{
+int id;   //instance variable
+float per;
+Student(int x, float y){
+per=y;   ///y is local variable
+id=x;
+}
+void show(){
+System.out.println("id="+id);
+System.out.println("per="+id);
+}
+class ZeroConstructor{
+psvm(String args[])
+{
+Student s=new Student(1023,76.56f);
+s.show();
+Student s1=new Student(1024,76.98f);
+s1.show();
+}
+}
+
+
+in order resolve the issue between local and instance variable assigning issue
+
+this -> operator is reference to current class object
+
+------------------------------------------
+
+Super:
+
+ex:
+class Parent{
+int age=54;
+}
+class Chiled extends Parent{
+int age=26;
+
+void show(){
+System.out.println("parent age="+super.age);
+System.out.println("child age="+age);
+ }
+}
+class SuperDemo{
+psvm(S a)
+{
+Child shiva=new Child();
+shiva.show();
+}
+}
+
+
+
+
+
+
+====================================================
+
+Java 
+JVM : converts the byte code to machine code code
+
+
+Java consists of packages.
+
+packages consists of classes.
+
+
+
+
+
+
+
+
+
+Data types:
+==========
+Classfiication of information.
+
+Data Types of are of two types
+---------------------------------------------
+1)primitive
+2)non-primitive
+
+
+
+                                                                                  Primitive
+                                                                                       |
+                            ---------------------------------------------------------------------------------------------------
+                            |                                                             |                                                        |
+                        numbers                                            bolean type                                            characters
+                             |                                                         (t/f)                                                         |
+    -----------------------------------------                                                                                                 char
+    |                                               |                                                                                                  2B
+intergers                                   decimals
+     |                                                      |
+-----------------------------                      -----------------------
+|          |        |          |                     |                        |
+byte  short   int      long               float                   double
+1B        2B      4B       8B                  8B                        8B     
+
+
+Operators & Assignments:
+---------------------------------------
+1)Increment / decrement
+-----------------------------
+pre-increment:  y++
+post-increment: y++
+
+pre-decreement : --y
+post-decrement: y--
+
+
+int x=4,y;
+y=++x;     x=5 and y=5
+y=x++;      s=5, y=4
+
+int x=4,y;
+y=--x;        x=3 ,y=3
+y=x--;       x=3 y =4
+
+Arithmetic Operators
+------------------------------------------------------
+(+,-,*,/,%)
+
+
+MAX(max_type,type ofa,type of b)
+
+byte+byte=int
+byte+short=int
+int+long=long
+long+float=double
+double+char=double
+char+char=int
+ASCII = A(65) a(97)
+
+
+relational operators----
+--------------------------------
+(<,>,>=,<=)
+
+
+Equality Oprators
+------------------------------
+==, !=
+int a=20
+a/20==10  ///both are equal true
+a!=10// if both are not equal (true)
+
+
+Bitwise Operators
+------------------------------
+&, | , ^
+
+T&T -> T
+F|F -> F
+T^F -> T
+
+----------------------------
+Type Casting
+------------------
+Converting one datatype to another datatype
+1)Implicit (b++)
+------------------------------------------
+(1B)byte-> 2B short  -> 4B int -> 8B long -> 4B float -> 8B double
+                                         |
+                                    2B char
+
+2)explicit  (b=(byte)b+1;)
+----------------------------------------
+(1B)byte<- 2B short <- 4B int <-8B long <- 4B float <- 8B double
+                                         |
+                                    2B char
+
+
+Assignment Operators
+-------------------------------------------------------
+3types
+1)Simple assignment operator
+2)Chained assognment operator
+3)compound assignment
+
+* chain assignment : it cannot be done at time of declaration
+int a,b,c,d;
+a=b=c=d=10;
+
+
+*compound assignment
++=
+a+=30
+a=a+30
+%=
+&=
+|=
+^=
+
+Evaluation Order
+---------------------------------------
+*,/,+,-
+
+
+control statements
+--------------------------------------------------
+1)simple if
+2)else if
+3)nested if else
+4)if else ladder
+
+
+Simple if :
+---------------------
+if(condition)
+{
+}
+
+
+
+
+
+else if -
+------------------------------
+if(condition)
+{
+}
+else{
+}
+
+
+
+
+nested if else
+-----------------------------
+if want to write the multiple conditions
+
+if(cond-1)
+{
+if(cond-2)
+{
+st-1
+}
+else
+{
+st-2
+}
+else-3
+
+class operators{
+psvm()
+{
+int a=6;
+if(a>0)
+{
+if(a>10000)
+sop("a is +ve and >1000)
+else
+sop("+ve and <1000");
+}
+else
+sop("a is -ve"
+}
+}
+}
+
+*drwaback: if con-1 is false , remaining conditions are not executed
+
+if - else ladder
+-------------------------------------
+if(cond-1)
+st-1;
+else if(cond-2)
+st-2;
+
+else if(cond-n)
+st-n;
+else
+st;
+
+
+* for n requirements we have n-1 conditions
+class operators{
+psvm(){
+int a=10,b=5,c=2;
+if(a>b && a>c)
+sop("a is max");
+else if(b>a && b>c)
+sop("b is max");
+else
+sop("c is max");
+}
+}
+
+
+Loop
+============================
+while
+
+syntax:
+initialisation;
+while(cond)
+{
+st-1;
+st-n;
+}
+
+class operators{
+psvm(){
+int x=0,i=1,n=5;
+while(i<=5)
+{
+sop(i);
+i++;
+}
+sop(x);
+}
+}
+
+
+............
+x=1,n=5,i=1
+while(i<=n)
+{
+x=x*1;
+i++;
+}
+sop(x)
+
+
+*assignment ....while table (5 table)
+
+i/0=153 =>sum of cube of intergers
+amstrongs numbers
+
+
+
+
+Do while
+---------------------------
+initialisation
+do
+{
+
+}while(condi)
+
+
+for loop
+------------------------------------------------------------------
+for(initialise;condition,;++/--)
+{
+st-1;
+}
+
+===========================================
+
+
+
+Nested for-loop
+--------------------------------
+for(initialise;cond-1,;++/--)
+{
+for(initialise;cond-2,;++/--)
+{
+st-1;
+}
+}
+
+initially, outer loop is executed then goes to inner loop 
+inner loop keep exceuting the con-2 is false, once cond-2 is false , it goes to outer loop, again loop follows
+
+for(i=1;i<=2;i++){
+for(j=1;j<=5;j++){
+sop("hi")
+}
+}
+
+class OpDemo
+{
+psvm()
+{
+for(i=1;i<=5;i++){
+for(j=1;j<=5;j++){
+sop(j);
+}
+sop();
+}
+}
+}
+12345
+12345
+12345
+12345
+12345
+
+class OpDemo
+{
+psvm()
+{
+for(i=1;i<=5;i++){
+for(j=1;j<=i;j++){
+sop(j);
+}
+sop();
+}
+}
+}
+1
+12
+123
+1234
+12345
+
+class OpDemo
+{
+psvm()
+{
+for(i=1;i<=5;i++){
+for(j=1;j<=i;j++){
+sop(i);
+}
+sop();
+}
+}
+}
+1
+22
+333
+4444
+55555
+
+class OpDemo
+{
+psvm()
+{
+for(i=1;i<=5;i++){
+for(j=1;j<=i;j++){
+sop("*");
+}
+sop();
+}
+}
+}
+*
+**
+***
+****
+*****
+
+
+class OpDemo
+{
+psvm()
+{
+for(i=1;i<=5;i++){
+for(j=1;j<=i;j++){
+sop(j);
+}
+sop();
+}
+}
+}
+1
+12
+123
+1234
+12345
+
+class OpDemo
+{
+psvm()
+{
+int k=1;
+for(i=1;i<=4;i++){
+for(j=1;j<=i;j++){
+sop(k);
+k++;
+}
+sop();
+}
+}
+}
+1
+23
+456
+78910
+
+class OpDemo
+{
+psvm()
+{
+
+for(i=1;i<=5;i++){
+for(j=5;j>=i;j--){
+sop(j);
+}
+sop();
+}
+}
+}
+54321
+5432
+543
+54
+5
+
+class OpDemo
+{
+psvm()
+{
+for(i=5;i>=1;i--){
+for(j=1;j<=i;j++){
+sop(j);
+}
+sop();
+}
+}
+
+
+12345
+1234
+123
+12
+1
+
+
+---------------
+class OpDemo
+{
+psvm()
+{
+int k=1;
+for(i=1;i<=5;i--){
+for(j=1;j<=i;j++){
+if(k%2==0)
+sop(0);
+else
+sop(1);
+k++;
+
+}
+sop();
+}
+}
+
+1
+0 1
+0 1 0
+1 0 1 0
+1 0 1 0 1
+
+
+---------------------------------
+
+*assignment
+12345
+1234
+123
+12
+1
+
+
+----------------------
+
+
+for(i=1;i<=5;i++){
+for(x=5,x>=i,x--){
+sop(" ");
+}
+for(j=5;j<=i;j++){
+sop(j);
+}
+sopln();
+}
+}
+}
+
+______1
+_____12
+____123
+___1234
+__12345
+
+
+
+-------------------------------------------
+
+for(i=1;i<=5;i++){
+for(x=5,x>=i,x--){
+sop(" ");
+}
+for(j=5;j<=i;j++){
+sop(j+ " ");
+}
+sopln();
+}
+}
+}
+
+          1
+       1    2
+     1   2    3
+   1   2    3    4
+1    2   3    4     5
+
+-------------------------------------------
+
+
+==========================================
+
+Arrays
+-------------------------------------
+collection of homogeneous elements
+collection of similar elements
+
+
+how to declare an array
+1)datatype ar[];
+2)datatype[] ar;
+3)datatype []ar;
+
+
+ex
+int a[]= new int[5];
+int a;
+a=new int[5];
+
+
+int x[];
+int[] x;
+int []x;
+
+
+representation 
+sop(a[0]);
+
+
+for(i=1;i...
+sop(a[i]);
+
+
+
+
+import java.util.scanner;
+class Op
+{
+psvm()
+{
+int a[];
+a=new int[5];
+Scanner sc=new Scanner(System.in);
+for(int i=0;i<5;i++){
+sop(enter the array elements");
+a[i]=sc.nextInt();
+}
+//int sum=0;
+for(int i=0;i<5;i++){
+sop("a["+i+"]="+a[i]);
+
+//sum=sum+a[i];
+//sop("sum="+sum);
+
+}
+}
+
+
+classified as
+1)single dimensional array a[]
+2)two dimensional array a[][]
+
+
+for each loop
+--------------
+for datatype variable;array/collection){]
+}
+
+
+
+
+import java.util.scanner;
+class Op
+{
+psvm()
+{
+int a[];
+a=new int[5];
+Scanner sc=new Scanner(System.in);
+for(int i=0;i<5;i++){
+sop(enter the array elements");
+a[i]=sc.nextInt();
+}
+for(int x :a)
+{
+sop(x);
+}
+}
+}
+
+
+
+import java.util.scanner;
+class Op
+{
+psvm(String x[])
+{
+sop(x[0]);
+}
+}
+
+
+while execution u write values for x[]
+
+
+-----------------------------------------------------------------------
+
+SQL: structured Query language
+-----------
+
+oracle-> database
+mysql
+mangodb
+sql server
+
+-> it is open source
+
+
+DDL : Data Definition language
+=====
+works on coloumns or table structure
+
+->create
+
+->alter- modify,add,rename,drop
+
+->rename
+
+->drop
+
+
+DML
+===========
+->insert - single row, multiple row
+
+->update : entire column,particular row , multiple row,
+
+->delete- entire table, single row, multiple row
+
+->select : all rows, particular, single row & multi row
+
+
+* we cannot delete particular column
+
+connect system/manager
+
+*connect
+user-name : system
+password: 0904
+
+->to clear the screen cl scr
+
+
+Rules in SQL
+=======================
+1)Dublicate table names are not allowed
+2)dublicate coloumns in a table are not allowed
+3)every command or query ends with a semicolon
+4)the character values can be given in single quotes itself
+5)SQL is case insensitive i.e whatever case we write it will take upper case.
+
+
+DataTypes: classification of information
+------------------------------
+-----------------------------------
+1)Numbers:
+------------------
+number(size):
+It can store w/o decimal values
+ex: id number(10)
+the size limit is 38 . the size indicates number of digits
+
+number(precision,scale):
+it can store decimal values
+ex: percentage number(4,3)
+7.234
+
+2)Characters:
+caterigorized into :
+char(size)
+-> it can only store characters.
+ex : name char(30)
+the size is limited to 2000.
+
+varchar(size)/varchhar2(size):
+it can store alpha numeric values also.
+ex: rollno varchar(20)
+the size is limited to 4000.
+
+Date: to store the system date
+
+Time: to store the system time
+
+blob: to store the information in binary object (like files, images)
+
+clob: to store the info in character object(like files,images)
+
+
+
+DDL : (data definition language)
+==================================
+
+create
+==========
+Syntax :
+
+
+create table<table_name>  (<col_name1><data_type1>....................................<col_name N><data typeN>).
+
+
+create table emp(eid number(10),ename varchar(10),esalary number(10));
+
+->to check the structure of the table
+desc <tablename>
+
+
+alter
+----------------------
+modify
+-------------
+syntax:
+alter table <table_name> modify (<col_name1><new_data_type1>............<col_nameN><new_data_typeN>);
+
+alter table emp modify (eid varchar(10));
+
+add
+--------------
+syntax:
+alter table <table_name> add(<col_name1><new_data_type1>............<col_nameN><new_data_typeN>);
+
+alter table emp add eoj date;
+alter table emp add (address varchar(10),contact number(10));
+
+rename :
+-------------
+syntax
+alter table<table_name> rename column <old colname> to <new col name>
+
+alter table emp rename column eoj to joining_date;
+
+
+Drop: 
+syntax:
+alter table <tablename> drop column <col_name>;
+alter table emp drop column joining_date;
+
+alter table <table_name> drop (col_name1,col_name2....);
+alter table emp drop(address,contact);
+
+rename:
+--------------
+ rename <oldtablename> to <newtablename>;
+rename emp to company;
+
+drop
+------------
+drop table <table_name>
+
+drop table company
+
+
+
+DML : Data Manipulation Language
+============================
+->it works on rows
+
+1)Insert:
+========================
+All columns single row
+-------------------------------------------------------------
+Syntax: 
+insert into <table_name> values(<value1>,.....<valueN>);
+
+ex:
+insert into emp values(1023,'priyanka',10000,'florida',9876543210);
+
+
+All columns multiple Rows
+-------------------------------------
+& is used to store values into db
+Syntax: insert into <table_name> values (&<colname1>.........................&<colnameN>);
+ex
+insert into emp values(&eid,'&ename',&esalary,'&address',&contact);
+Enter value for eid: 1028
+Enter value for ename: sai
+Enter value for esalary: 25000
+Enter value for address: texas
+Enter value for contact: 4567899878
+old   1: insert into emp values(&eid,'&ename',&esalary,'&address',&contact)
+new   1: insert into emp values(1028,'sai',25000,'texas',4567899878)
+
+
+Particular Columns  Single Row
+------------------------------------------
+
+syntax:
+insert into <table_name> (<col_name1>......<col_nameN>) values (<value1>....<valueN>);
+example:
+SQL> insert into emp (eid,ename,address) values(1036,'pavan','oklahoma');
+
+1 row created.
+
+Particular Column Multiple Rows
+-----------------------------------------------
+syntax 
+insert into table_name (colname1>.......<colnameN) values  (&<colname1>.............&<colnameN>);
+example 
+SQL> insert into emp(eid,ename,address) values (&eid,'&ename','&address');
+Enter value for eid: 1033
+Enter value for ename: roopa
+Enter value for address: irving
+old   1: insert into emp(eid,ename,address) values (&eid,'&ename','&address')
+new   1: insert into emp(eid,ename,address) values (1033,'roopa','irving')
+
+
+Update
+======
+Entire Column update
+----------------------------------
+Syntax : update <table_name> set <colname1>=<value1 > ....<colnameN >=<valueN>;
+
+example:
+
+SQL> update emp set doj='30-mar-2020';
+
+5 rows updated.
+
+
+
+Particular Row Single column  Update
+---------------------------------------------------------------
+Syntax :
+update <tablename> set <colname1>=<value1> where  <condition>;
+
+ex:
+update emp set esalary=34000 where eid=1036;
+
+Particular Row Multiple column  Update
+--------------------------------------------------------
+Syntax :
+update <tablename> set <colname1>=<value1>....<colnameN>=<valueN> where  <condition>;
+example:
+update emp set esalary=34000,ename='hari' where eid=1036;
+
+Multiple rows single column update
+--------------------------------------------------
+example : update emp set esalary=34000 where eid in (1033,1028);
+
+
+
+Delete
+====================
+entire table
+---------------
+syntax : delete from <tablename>;
+ex: 
+delete from emp;
+
+Particular record(row) delete
+----------------------------------
+syntax:
+delete from <tablename> where condition;
+ex:
+delete from emp where eid=1033;
+
+Multiple records (rows)delete
+-----------------------------------
+syntax
+delete from <tablename> where condition;
+ex:
+ delete from emp where eid in(1036,1032);
+
+
+Select
+=============
+entire table
+Syntax :
+select * from <tablename>;
+ex:
+select * from emp;
+
+Particular row 
+-----------------------------------
+syntax:
+select * from <tablename> where condition;
+ex:
+select * from emp where eid=1023;
+
+Particular coloumn
+--------------------------------
+Syntax:
+select <colname1>...<colnameN> from <tablename>;
+ex:
+select eid,ename from emp;
+
+
+*select eid,ename from emp where eid in(1023,1032);
+
+
+
+====================================================
+6/5/2020
+
+
+Operators::
+___________________
+Dual is default table with one row multiple columns
+
+select x+y,x-y,x*y,x/y from dual;
+
+one row 
+
+dual is default table 
+
+
+comparsion operators
+===================
+
+<,>,<=,>=
+
+L> 
+
+select * from <table> where <coloumname> in(x,y);
+ex:  select * from emp where eid in(1023,1033);
+
+select * from <table> where <coloumname> not in(x,y);
+ex :select * from emp where eid not in(1023,1033);
+
+select * from <table> where <coloumname> between x and y;
+ex: select * from emp where esalary between 30000 and 48000;
+
+select * from <table>where <coloumname> not between x and y;
+ex: select * from emp where esalary not between 30000 and 48000;
+
+Like :
+===========
+_ , %
+_ -> single character
+% -> many characters
+like - > like character
+
+select * from <table>where <coloumname> like 'n%';
+starting with n
+ex:
+select * from <table>where <coloumname> like 'n%';
+ending with n
+
+select * from <table>where <coloumname> like '_n%'
+unaware of the first character, second character- aware;
+
+->
+
+
+
+Order by
+------------------------
+gives order by ascending by default
+
+select * where <coloumname> order by desc;
+
+select * where <coloumname> order by asce;
+
+select min(colname) from tablename;
+
+select max(colname) from tablename;
+
+select sum(colname) from tablename;
+
+select count(colname) from tablename;
+
+
+Group by:
+------------------
+max()
+min()
+sum()
+avg()
+count()
+
+*having is used with group by function;
+*along with group by function we cant have where clause
+
+select max(colname) from tablename group by colname2;
+
+
+constraints
+====================
+to have striction, we use constraints:
+
+1)unique : it doesnt allow the duplicate but it allows the null values
+2)not null : it doesnt allow values but allows duplicate values
+3)check: based on condition it allow the value
+4)primary key : it is combination of unique and not null
+It does not allow null values and dublicates.
+
+TCL : : Transaction control language
+=================================
+roll back: undo the last action
+commit : saving
+
+
+memory:
+primary memory:
+unit we write commit or we close the window
+it wont be saved inside the scondary memory
+it is temporay  
+
+secondary memory
+ 
+ 
+
+============================================================
+
+7/5/2020
+
+Sub queries
+==================
+we cant change datatype of a variable if it contains value
+
+query inside a query
+
+->select * from student where marks=(select max(marks) from student);
+
+->select * from student where marks=(select max(marks) from student where marks<(select max(marks) from student));
+
+-> select * from student where id=any(select id from student where id between 3 and 6);
+
+->select * from student;
+
+->select * from student where id<any(select id from student where id between 3 and 6);
+
+->select * from student where id>any(select id from student where id between 3 and 6);
+
+->select * from student where id<all(select id from student where id between 3 and 6);
+->select * from student where id>all(select id from student where id between 3 and 6);
+
+
+inner join:
+================
+-> select s.id,t.id,s.name,t.name,s.marks,t.marks from student s inner join student1 t on s.name=t.name;
+
+->select s.id,t.id,s.name,t.name,s.marks,t.marks from student s left join student1 t on s.name=t.name;
+
+->select s.id,t.id,s.name,t.name,s.marks,t.marks from student s right join student1 t on s.name=t.name;
+
+
+
+================================================================
+
+HTML :
+
+Hyper text markup language
+
+->used to develop pages
+
+webpages of two types
+1)static page : doesnt change upon request : wikipedia
+2)dynamic page : changes on request : exam result website
+
+1.headings:
+=====================
+h1,h2,h3,h4,h5,h6
+
+attributes: align - left/center/right
+
+2. Scrolling : <marquee>  </marquee>
+
+attributes :
+bgcolor=color
+direction = left/right/up/down
+scrollamount =value
+behaviour=scroll/alternate/slide
+loop=value
+width-=value
+height=value
+
+
+
+3) paragraph  : <p> </p>
+atributes 
+align=justify
+<br>
+fonts
+
+color
+
+
+ex:
+
+<html> 
+<body>
+<h1>welcome to html class </h1>
+<h2>welcome to html class </h2>
+<h3>welcome to html class </h3>
+<h4>welcome to html class </h4>
+<h5>welcome to html class </h5>
+<fonts size="35" color="green">welcome to html class <fonts>
+
+<img src="https://images.app.goo.gl/pU76Ukopkzc1ZJaH8" height=300 width=300>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.7890144866005!2d-97.03800288481338!3d32.95657938091816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c2b91066aaaab%3A0x8ee4a2e0b2861598!2sJNIT%20Technologies%20Inc.%2C!5e0!3m2!1sen!2sus!4v1589082477903!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+<img src= "Desktop/wonder-woman.jpg"         width=500 height=200 alighn="center"/>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2apfulo5uqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<marquee bgcolor="wheat" direction="right" width="150" height="50" loop="2" scrollamount="5"> this text will scroll now
+
+</marquee>
+</body>
+
+  </html>
+
+
+
+=================================
+
+Table
+
+<html>
+<body>
+<br><br><br>
+
+<table border="2" align="center" width="400" height="200" bgcolor="green" cellspacing="1" cellpadding="40" >
+<tr><td>empid</td><td>emp name</td><td>emp salary</td> <td>emp designation</td></tr>
+<tr><td>1023</td><td>rahul</td><td>45000</td><software</td></tr>
+<tr><td>1024</td><td>sai</td><td>48000</td><td>it</td></tr>
+
+</table>
+
+</body>
+</html>
+
+
+=============================================================
+hyperlinks
+
+<html>
+<body>
+<a href="https://www.youtube.com/" target="blank">youtube</a>
+
+</body>
+</html>
+
+
+=======================================================
+
+forms
+
+<html>
+<body>
+<br><br><br>
+
+<form action="url" method="post">
+username : <input type="text" name="username" value="rahul" placeholder="username"><br><br>
+password: <input type="text" name="password" placeholder="password">
+<select name="branch">
+<option value="cse">cse</option> <br>
+<option value="cse">ece</option><br>
+<option value="cse">eee</option><br>
+</select>
+<br><br>
+
+<textarea cols="20" rows="20">
+
+</textarea>
+<br><br>
+
+<input type="radio" name="sex"> male
+<input type="radio" name="sex"> female
+
+<br><br><br>
+
+<input type="checkbox">M.Tech
+
+<input type="checkbox">b.Tech
+
+<input type="submit" value="register">
+
+</form>
+
+</body>
+</html>
+
+=====================================================
+
+
+
+Interfaces
+========================================================
+method name must be same with different type of parameters or order of parameters or number of parameters
+
+method name must be same with same type of parameters or order of parameters or number of parameters
+
+method : set of instructions that perform an action
+1)return type
+2)parameters
+
+instance variables: the memory is occupies in heap area
+
+which variables must be declared as static ?
+- variable whose value is common to all the objects
+static occupies method area
+static depends on classname
+
+jvm: converts the byte code to machine code 
+
+constructor : used to initialize objects
+
+
+classcasting :
+converting one class object into another class object
+
+Upcasting:
+sub class object is converted into super class i.e upcasting
+ 
+Car x=new Audi()
+x=new Bmw();
+
+
+abstract class : collection of abstract methods and concrete methods
+abstract method: the method which doesnt have any implementation
+concrete method: the method which doesnt have any implementation
+
+
+interface:
+doesnt contain any body,only have abstract methods
+
+1)a abstract class which contains alll the abstract methods instead of using abstract class we can use interface
+
+2) its pure abstract class
+
+3) interface all the methods are default abstract and public 
+
+4)a class must implements an interface, a class cannot extend an interface
+
+5)interface supports multiple inheritance
+
+6) if a class implements an Interface the all the abstract methods must be overrided
+
+7)if we are overriding the interface abstract methods then all the overrided methods must be declared as public
+
+8)we cant create object for an interface but we can create the reference
+
+9)interface variables are by default public static final
+
+10)interface cannot implement another interface
+
+10)interface can extend another interface
+
+11)nested inteface is also possible
+
+12)we cant write a constructor inside interface
+-------------------------------------------------------------------------------------------------
+
+Multiple inheritance:
+two super classes,one sub class
+
+interface Parent {
+void details ();
+}
+class child implements Parent{
+public void details(){
+System.out.println("interface example");
+}
+}
+
+
+interface Vehicle{
+void speed();
+void cost();
+}
+abstract class Car Implements vehicle{
+void viper(){
+sop("every car has vipers");
+}
+
+}
+abstract class Bike implements Vehicle{
+void stand(){
+sop("all bikes have stand");
+}
+}
+class Audi extends Car{
+public void speed(){
+sop("audi speed varies from 120 to 180");
+}
+public void cost(){
+sop("audi cost varies from 99 lakhs to 2cr");
+}
+}
+class Bmw extends Car{
+public void speed()
+{
+sop("bmw speed varies from 150 to 220");
+}
+public void cost(){
+sop("bmw cost varies from 2cr to 5cr");
+}
+}
+class Fz extends Bike{
+public void speed(){
+sop("Fz speed varies from 70 to 140");
+}
+public void cost(){
+sop("Fz cost varies from 1lk to 3 lk");
+}
+}
+class Apache extends Bike{
+public void speed(){
+sop("Apache speed varies from 90 to 160");
+}
+public void cost()
+sop("apache cost varies from 2lk to 4lk");
+}
+}
+class Interface{
+psvm(String args[]){
+Bike x=new Fz();
+x.speed();
+x.stand();
+x.cost();
+x=new Apache();
+x.speed();
+x.stand();
+x.cost();
+Car a=new Audi();
+a.speed();
+a.cost();
+a.viber();
+a=new Bmw();
+a.speed();
+a.cost();
+a.viber();
+}
+}
+
+
+
+==============================================
+
+
+interface Parent {
+int age=54;
+}
+interface Child{
+int age=24;
+}
+
+class Details implements Child,Parent{
+void show(){
+System.out.println("Parent age is "+Parent.age); //ambuity if same variable used for parent and child age 
+sop("child age is "+Child.age);
+}
+}
+class InterfaceVariable{
+public static void main(String args[])
+{
+Details d=new Details();
+d.show();
+
+}
+}
+
+
+===========================
+
+
+Inner classes:
+A class written with in a class is known as inner class.
+
+1) non Static inner class
+2)static inner class
+
+non-static inner class are classified into three types
+
+1)member inner class
+2)local inner class : class within method is local inner class
+3)Anonymous inner class : class without name
+
+
+---------------------------------------------------------------
+
+class University{
+void announcement(){
+sop("exam date announce");// else Dept cse=new Dept(); cse.questionPaper();
+}
+  
+class Dept{
+void questionPaper(){
+sop("preparing question papers");
+}
+}
+}
+class InnerDemo{
+psvm(string args[])
+{
+University jntu=new University();
+jntu.announcement();
+University.Dept cse=jntu.new Dept();
+cse.questionPaper();
+}
+}
+======================================
+
+class University{
+void announcement(){
+class Dept{
+void task(){
+sop("preparing question papers");
+}
+}
+  Dept cse =new Dept();
+cse.task();
+
+}
+}
+class InnerDemo{
+psvm(string args[])
+{
+University jntu=new University();
+jntu.announcement();
+
+}
+}
+=================================================
+
+
+class University{
+static class Dept{
+void display(){
+System.out.println("instance method inside the static class");
+}
+static void show(){
+sop("statc method inside the static class");
+}
+}
+}
+class InnerDemo{
+psvm(string args[])
+{
+University jntu=new University();
+jntu.announcement();
+University.Dept x=new University.Dept();
+s.display();
+University.Dept.show();
+}
+}
+
+=============================================
+Anonymous
+abstract class Person{
+abstract void eat();
+}
+class Demo{
+psvm()
+{
+Person rahul=new Person(){
+void eat(){
+sop("eating ice cream");
+
+}
+};
+rahul.eat();
+}
+}
+
+-----------------------------------------------------------
+
+
+abstract class Car{
+abstract void cost();
+}
+class Demo{
+psvm()
+Car x=new Car(){
+void cost()
+{
+sop("audi si 20lk");
+}
+};
+x.cost();
+}
+}
+
+
+
+
+====================================================================
+
+11/5/2020
+
+Exception:
+------------------------------
+In a normal flow of execution, if an abnormal situation occurs then jvm willl terminate the program by throwing an exception class object
+
+
+Class ExceptionDemo
+{
+psvm(String args[])
+{
+int a=10,b=0;
+sop("stmt-1 and sum="+(a+b));
+sop("stmt-2 and div="+(a/b)); // jvm will create arithmetic Exception object object and throw it
+sop("stmt-3 and mult="+(a*b));
+sop("stmt-4 and sub="+(a-b));
+}
+}
+
+
+
+
+Exception handling
+----------------------------------
+for example handling, we can use try -catch 
+to skip the instruction with the exception and execute the remaing part of the program correctly.
+to stop the inappropriate termination of program
+
+
+try{
+risky code;
+}
+catch(ExceptionClassname reference){
+msg related to exception
+}
+
+example:
+
+Class ExceptionDemo
+{
+psvm(String args[])
+{
+int a=10,b=0;
+sop("stmt-1 and sum="+(a+b));
+try{
+sop("stmt-2 and div="+(a/b)); 
+sop("stmt-3 and mult="+(a*b));
+}
+catch(ArithmeticException ae){
+
+}
+sop("stmt-4 and sub="+(a-b));
+}
+}
+ 
+
+
+
+
+Class ExceptionDemo
+{
+psvm(String args[])
+{
+int a=10,b=0;
+sop("stmt-1 and sum="+(a+b));
+try{
+sop("stmt-2 and div="+(a/b)); // jvm will create arithmetic Exception object object and throw it
+sop("stmt-3 and mult="+(a*b));
+}catch(ArithmeticException ae);{
+}
+
+sop("stmt-4 and sub="+(a-b));
+}
+}
+
+
+
+we have two predefined classes
+1)class : 
+2) object : object class is the super class for all the classes (java.lang.object)
+3)throwable 
+
+
+Errors:
+1)Syntax : if we miss any (;) or ({) in code it will give syntax error
+
+2)Logical error : 
+ex: a=10 b=5
+if(a>b)
+sop("b is max");
+
+3)Runtime exception : 
+if an abnormal situation occurs then jvm willl terminate the program by throwing an exception class object
+
+                                                                            Throwable
+                                                                                    |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        |                                                                                                                                                                                                                                   |
+Exception                                                                                                                                                                                                                       Error
+----------------------------------------------------------------------------------------------------------------------------                                                                                           |
+          |                                          |                                 |                            |                           |                         -------------------------------------------------------------------------------------------------
+Runtime Exception             IOEXception              ServeletException     Interupted          SQL                       |                                                                  |                                             |
+          |                                         |                                                             exception        exception            UM Error                                               Verify Error                              AssertionError
+1)ArithmeticExcetion          FilenotfoundException                                                                                       |                                                           iteral Error
+2)nullpointer exception       EOFException                                                                                              StackOverflow Error
+3)AIOBEInterrupted            IOException                                                                                                 out of Memory error
+(arrayoutofboxexception)                                                                                                                         (unchecked )
+4)ClassCastException
+5)IllegalARgumentException
+ (numberFormatexception)
+6)IllegalStateException
+         |
+   IllegalThreadStateException
+   IllegalMonitorStateException
+7)ndexOutofBoundsException
+      |
+    AIOBE(array)
+    STringtoo
+
+
+(unchecked)
+     
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+Exception is classified into two types
+1)un-checked exceptions :the exceptions which are unknown to compiler are known as un-checked exceptions
+
+2)checked exceptions: the exceptions which are known to compiler then those are checked exceptions(already known to compiler: predefined methods)
+
+JDBC-sqlexceptions :already given to method
+
+If the exceprion is not handled,then compiler give error
+
+InputStream Exception - IO Exception
+
+
+
+Exception Handling means , to skip the instruction with exception and exceute the remaining part of the program correctly
+or 
+to stop inappropriate termination of programs
+
+-----------------------------------------------------------------
+Class ExceptionDemo
+{
+psvm(String args[])
+{
+int a=10,b=0;
+sop("stmt-1 and sum="+(a+b));
+try{
+sop("stmt-2 and div="+(a/b)); // jvm will create arithmetic Exception object object and throw it
+}
+
+catch(ArithmeticException ae);{
+
+
+}
+sop("stmt-3 and mult="+(a*b));
+sop("stmt-4 and sub="+(a-b));
+}
+}
+----------------------------------------------------------------------------------------------------
+->Arithmetic Exception extends RuntimeExceptions extends Throwable
+
+---------------------------------------------------------------------------------------------------
+java.lang.throwable
+1)getMessage
+2)printstacktrace (also gives the error line)
+3)ToString : converts to string
+
+Class ExceptionDemo
+{
+psvm(String args[])
+{
+int a=10,b=0;
+sop("stmt-1 and sum="+(a+b));
+try{
+sop("stmt-2 and div="+(a/b)); // jvm will create the new arithmetic Exception() object object and throw it
+}
+
+catch(ArithmeticException ae);{// ae=new ArithmeticException() is created internally
+//sop(ae.getMessage());
+//sop(ae.toString());
+ae.printStackTrace();
+}
+sop("stmt-3 and mult="+(a*b));
+sop("stmt-4 and sub="+(a-b));
+}
+}
+
+===================================================
+
+Class ExceptionDemo
+{
+psvm(String args[])
+{
+int a=10,b=2; //b=0
+//String name="java";
+String name=null; // will create null pointer exception
+sop("stmt-1 and sum="+(a+b));
+try{
+sop("stmt-2 and div="+(a/b));
+sop("stmt-3 and length is "+name.length()); // jvm will create the new nullpointer Exception() object   object and throw it
+}
+
+catch(ArithmeticException ae);{// ae=new ArithmeticException() is created internally
+//sop(ae.getMessage());
+//sop(ae.toString());
+ae.printStackTrace();
+}
+catch(NullPointerException np){
+np.printStackTrace();
+
+}
+sop("stmt-4 and mult="+(a*b));
+sop("stmt-5 and sub="+(a-b));
+}
+}
+
+
+//b=0; stmt-3 will not be executed
+
+--------------------------------------------------------
+
+if u are unaware of kind of exception 
+catch(Exception e){
+e.printStackTrace();
+}
+----------------------------------------------------
+Exception catch should be written at the end of all kinds of exceptions
+
+
+========================================================
+nullpointerecpetion cannot catch the aritmetic exception
+
+=================================================
+
+1)try {
+riskycode;
+}
+catch(ExceptionClass ref){
+msg
+}
+
+
+2)
+try{
+risky code;
+try{
+riskycode;
+}
+catch(ExceptionClass ref){
+msg
+}
+}
+catch(ExceptionClass ref){
+msg
+}
+
+3)try {
+riskycode;
+}
+catch(ExceptionClass ref){
+msg
+}
+catch(ExceptionClass ref){
+msg
+}
+
+4)
+try {
+riskycode;
+}
+catch(ExceptionClass ref){
+msg
+try {
+riskycode;
+}
+catch(ExceptionClass ref){
+msg
+}
+}
+
+===========================================================
+
+
+Finally
+==================
+->is a block which is used deallocate the memory or close the objects
+->is a block which gets executed irrespective of the exception
+->it can only be written with try and catch
+->we cant write any instructions between try-catch and finally.
+->always writen at the end of the try catch exception
+
+
+ex:jdbc
+connection con;
+con.close();
+
+
+
+Class ExceptionDemo
+{
+psvm(String args[])
+{
+int a=10,b=2; //b=0
+String name=null; // will create null pointer exception
+sop("stmt-1 and sum="+(a+b));
+try{
+sop("stmt-2 and div="+(a/b));
+sop("stmt-3 and length is "+name.length()); // jvm will create the new nullpointer Exception() object   object and throw it
+}
+
+catch(ArithmeticException ae);{// ae=new ArithmeticException() is created internally
+
+ae.printStackTrace();
+}
+catch(NullPointerException np){
+np.printStackTrace();
+}
+
+finally{
+System.out.println("deallocate the memory or close the connection");
+}
+
+sop("stmt-4 and mult="+(a*b));
+sop("stmt-5 and sub="+(a-b));
+}
+}
+
+throw
+==================
+is the keyword used to generate the user defined exception
+
+import java.util.scanner;
+class userException{
+pvsm()
+{
+Scanner sc=new Scanner(System.in)
+int age=sc.nextInt();
+if(age>=18){
+sop(eligible for voting);
+else
+throw new RuntimeException("not eligible for voting");
+}
+}
+
+
+import java.util.scanner;
+class userException{
+pvsm()
+{
+try{
+Scanner sc=new Scanner(System.in)
+sop("enter age to check egiliby");
+int age=sc.nextInt();
+if(age>=18){
+sop(eligible for voting);
+else
+throw new RuntimeException("not eligible for voting");
+}
+catch(exception e)
+{
+e.printStacktrace();
+}
+}
+}
+
+
+instead of try-catch, we can use throws for checked exception
+pvsm()throws exception
+
+-> to handle the checked exception we can use throws and try and catch
+-> to handle the unchecked we can use try and catch
+
+
+import java.util.scanner;
+class Vote extends Exception {
+vote(String msg){
+sop(msg);
+}
+class userException{
+pvsm() throws exception
+{
+
+Scanner sc=new Scanner(System.in)
+sop("enter age to check egiliby");
+int age=sc.nextInt();
+if(age>=18)
+sop(eligible for voting);
+else
+throw new Vote("not eligible for voting");
+
+}
+}
+
+
+==================================================
+
+
+
+12/5/2020
+
+Wrapper class
+----------------------------
+Java is not pure oops because of the primitive data types is not pure oops but  it is fully oops
+
+int, float, double,long
+
+pure oopsa languages: javascript,python
+
+we make java fully oops language using wrapper class
+for every data type, we have pre defined class
+
+int->integer
+
+int a=10;//its not a object...its primitive data type
+
+*Wrapper classes are used to convert any data type into an object.
+Integer i=new Integer(a);//i is object
+
+class Demo{
+pvsm(){
+int a=10;
+Integer i=new Integer(a);
+sop(a);
+sop(i);
+}
+}
+
+
+
+Converting primitive datatype to object is called boxing. 
+
+int a=10;//unboxing
+Integer i =new Interger; //boxing
+Integer i =5;//auto boxing
+int a=b;//unboxing
+
+class Demo{
+pvsm(){
+int a=10;
+Integer i=new Integer(a);
+sop(a);
+sop(i);
+Integer x=20;//auto boxing;
+sop(x);
+Integer k=new Interger(100);
+int b=k;///auto unboxing
+sop(b);
+}
+}
+
+
+variable cant point to object; but it can store the object value;
+
+
+class Demo{
+pvsm(){
+int a=10;
+Integer i=new Integer(a);
+sop(a);
+sop(i);
+Integer x=20;//auto boxing;
+sop(x);
+Integer k=new Interger(100);
+int b=k;///auto unboxing
+sop(b);
+float fl=3.4f;
+Float e=new Float(fl);
+sop(fl);
+}
+}
+
+=======================================
+generic 
+------------------
+generic elements :any characters ,special characters ,string
+
+class Example<T>{///t is genereic unknown type....
+void show(T x){/// x is reference
+sop(x);
+}
+}
+class GenericDemo{
+psvm()
+Example<Integer> i=new Example<Interger>;
+i.show(100); //i.show(new Integer(100)); auto boxing...compiler will convert into object n passes to show
+Example<Double> d=new Example<Double>;
+d.show(3.4);
+Example<String> s=new Example<String>;
+s.show("hello");
+Example x=new Example();
+x.show(3);
+x.show(4.3);
+x.show("bye");
+}
+}
+
+*in compling , it will give note as unsafe operations
+
+
+
+=======================================
+arrays:
+===================
+collection of similar data types
+
+drawbacks:
+1)fixed size
+2)cant store dissimilar data
+
+
+collections
+=============================
+-> drawbacks of array can be overcome by using collections
+->a group of individual objects with help of generic or wrapper class
+
+note : with the help of generics and wrapper classes
+
+-> it is a interface
+                                                          
+                                                                 collection
+-----------------------------------------------------------------------------------------------------------------------------
+                |                                                                    |                                                  |
+               set                                                                List                                           Queue
+---------------------------------------------          -----------------------------------------------      --------------------
+       |                                |                       |                 |                 |                        |                   |
+HashSet                  NavigableSet      LinkedList  ArrayList   Vector    ArrayQueue  PriotityQueue
+                                                                                                    |
+linkedHashSet         SortedSet                                                 Stack
+
+                                TreeSet
+
+
+==================================
+Set:
+-----------------------
+it is also group of objects
+
+-> it doesnt allow duplicate alues
+->it allows nulll values
+-> it allows heterogenous elements
+
+HashSet : It follows random order
+
+LinkedHashSet : It follows insertion order
+
+TreeSet:It follows ascending order
+It doesnt allow heterogeneous elements
+---------------------------------------
+
+import java.util.*;
+class SetDemo{
+pvsm(){
+HashSet<String> hs=new HashSet<String>(); // LinkedHashSet<String> hs=new LinkedHashSet<String>();    // TreeSet<String> hs= new TreeSet<String>();
+hs.add("F");
+hs.add("A");
+hs.add("G");
+hs.add("H");
+hs.add("M");
+hs.add("T");
+hs.add("P");
+hs.add("S");
+hs.add("B");
+hs.add("E");
+//sop(hs);
+//sop(hs.size());
+//sop(hs.isEmpty());
+//sop(hs.contains("N"));
+//sop(hs.remove("N"));
+//Object o=hs.clone();
+//sop(o);
+//hs.clear();
+}
+}
+
+------------------------------------------------------------------------
+In Treeset, there are different methods.
+
+
+import java.util.*;
+class SetDemo{
+pvsm(){
+TreeSet<String> hs= new TreeSet<String>();
+hs.add("F");
+hs.add("A");
+hs.add("G");
+hs.add("H");
+hs.add("M");
+hs.add("T");
+hs.add("P");
+hs.add("S");
+hs.add("B");
+hs.add("E");
+sop(hs);
+//sop(hs.headset("M"));
+//sop(hs.headset("M",true));
+//sop(hs.tailset("M"));
+//sop(hs.tailset("M",false);
+//sop(hs.subset("M",true,"S",true));
+}
+}
+
+public E first(); - > ascending order ,first letter of list
+public E last(); - > ascending order , lastletter of list
+public E lower(); -> - > ascending order , previous letter of given letter
+public E floor();- > ascending order , Self letter of given letter
+public E ceiling(); - > ascending order , Self letter of given letter
+public E higher(); - > ascending order , next letter of given letter
+public E pollFirst();  ascending order ,first letter of list
+public E pollLast(); - > ascending order , lastletter of list
+
+==================================================================
+
+list
+====
+->it is group of individual objects
+->duplicate values,null values,heterogeneous elements
+
+
+
+import java.util.*;
+class ListDemo{
+psvm()
+ArrayList<Integer> al=new ArrayList<Interger>();
+al.add(10);
+al.add(22);
+al.add(14);
+al.add(10);
+al.add(34);
+al.add(76);
+al.add(66);
+al.add(11);
+sop(al);
+
+}
+}
+
+
+
+ArrayList
+=====================
+It follows the insertion order
+->fast processing 
+
+ArrayList<Integer> al=new ArrayList<Interger>();
+
+ex: Select * from employee;
+
+
+LinkedList:
+============================
+LinkedList<Integer> al=new LinkedList<Interger>();
+its good for searching
+ex :Select * from employee where id=1023;
+
+Vector
+=============
+vector <Integer> al=new Vector<Interger>();
+all the methods are synchronized
+
+=========================================================
+
+collection:
+========
+transfer of data stores in object from one place to another
+
+
+Stack
+=======
+it follows the insertion order
+
+
+import java.util.Stack;
+class ListDemo{
+psvm(){
+Stack<String> s=new Stack<String>();
+s.push("F");
+s.push("X");
+s.push("E");
+s.push("C");
+System.out.println(s);
+s.pop();
+System.out.println(s);
+System.out.println(s.peek());
+}
+}
