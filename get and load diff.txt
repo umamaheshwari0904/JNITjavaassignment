@@ -1,0 +1,20 @@
+Difference Between get() and load() methods in Hibernate
+
+Get() method return null, If no row is available in the session cache or the database for the given identifier whereas load() method throws object not found exception
+
+Get method always hit database while load() method may not always hit the database, depending upon which method is called.
+
+doubt : database hit
+
+Proxy:
+Get method never returns a proxy, it either returns null or fully initialized Object, while load() method may return proxy, which is the object with ID but without initializing other properties, which is lazily initialized. If you are just using the returned object for creating a relationship and only need Id then load() is the way to go.
+
+Performance:
+get method will return a completely initialized object if  Object is not on the cache but exists on Database, which may involve multiple round-trips to the database based upon object-relational mappings while load() method of Hibernate can return a proxy which can be initialized on demand (lazy initialization) when a non-identifier method is accessed.
+
+Due to the above reason use of the load method will result in slightly better performance, but there is a caveat that proxy objects will throw ObjectNotFoundException later if the corresponding row doesn’t exist in the database, instead of failing immediately so not a fail fast behavior.
+
+Avaibility:
+The load method exists prior to get() method that is added on user request.
+
+Use get method to determine if an instance exists or not because it can return null if instance doesn’t exists in cache and database and use load method to retrieve instance only if you think that instance should exists and non availability is an error condition.
