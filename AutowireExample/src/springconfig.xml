@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<bean id="jk" class="com.autowire.Categories" autowire="byName">
+  <property name="name" value="programming Books"></property>
+</bean>
+<bean id="bk" class="com.autowire.Book" autowire="byName">
+  <property name="bookname" value="Adv Java"></property>
+  <property name="bookprice" value="50"></property>
+</bean>
+</beans>
